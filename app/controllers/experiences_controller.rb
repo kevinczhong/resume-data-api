@@ -3,10 +3,12 @@ class ExperiencesController < ApplicationController
     experiences = Experience.all
     render json: experiences.as_json
   end
+
   def show
-    experience = Experience.find(params["id"])
+    experience = Experience.find_by(id: params[:id])
     render json: experience.as_json
   end
+
   def create
     experience = Experience.new(
       start_date: params[:start_date],
@@ -18,6 +20,7 @@ class ExperiencesController < ApplicationController
     experience.save
     render json: experience.as_json
   end
+
   def update
     experience = Experience.find_by(id: params[:id])
     experience.start_date = params[:start_date] || experience.start_date
@@ -28,9 +31,10 @@ class ExperiencesController < ApplicationController
     experience.save
     render json: experience.as_json
   end
+
   def destroy
     experience = Experience.find_by(id: params[:id])
     experience.destroy
-    render json: {message: "Experience deleted"}
+    render json: { message: "Experience deleted" }
   end
 end
