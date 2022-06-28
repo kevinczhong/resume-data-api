@@ -4,7 +4,7 @@ class CapstonesController < ApplicationController
     render json: capstones.as_json
   end
   def show
-    capstone = Capstone.find(params["id"])
+    capstone = Capstone.find_by(id: params["id"])
     render json: capstone.as_json
   end
   def create 
