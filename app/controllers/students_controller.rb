@@ -2,13 +2,13 @@ class StudentsController < ApplicationController
   # before_action :authenticate_user, except: [:index, :show]
 
   def index
-    students = Student.all
-    render json: students.as_json
+    @students = Student.all
+    render template: "students/index"
   end
 
   def show
-    student = Student.find_by(id: params[:id])
-    render json: student.as_json
+    @student = Student.find_by(id: params[:id])
+    render template: "students/show"
   end
 
   def create
@@ -26,8 +26,12 @@ class StudentsController < ApplicationController
       photo: params["photo"],
       user_id: params["user_id"],
     )
-    student.save
-    render json: student.as_json
+    if student.save
+      @student = student
+      render template: "students/show"
+    else
+      render json: { errors: student.errors_full_messages }, status: :unprocessable_entity
+    end
   end
 
   def update
@@ -43,8 +47,13 @@ class StudentsController < ApplicationController
     student.online_resume = params["online_resume"] || student.online_resume
     student.github = params["github"] || student.github
     student.photo = params["photo"] || student.photo
-    student.save
-    render json: student.as_json
+
+    if student.save
+      @student = student
+      render template: "students/show"
+    else
+      render json: { errors: student.errors.errors_full_messages }, status: :unprocessable_entity
+    end
   end
 
   def destroy
