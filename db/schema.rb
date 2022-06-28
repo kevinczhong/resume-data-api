@@ -11,6 +11,7 @@
 # It's strongly recommended that you check this file into your version control system.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 ActiveRecord::Schema[7.0].define(version: 2022_06_28_162312) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,6 +20,18 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_28_162312) do
     t.string "name"
     t.string "email"
     t.string "password_digest"
+=======
+ActiveRecord::Schema[7.0].define(version: 2022_06_27_204831) do
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "experiences", force: :cascade do |t|
+    t.string "start_date"
+    t.string "end_date"
+    t.string "job_title"
+    t.string "company_name"
+    t.text "details"
+>>>>>>> 82d30ba2a9ae6c38deef308b5a2a56d35641891f
 =======
 ActiveRecord::Schema[7.0].define(version: 2022_06_27_204915) do
   # These are extensions that must be enabled in order to support this database
