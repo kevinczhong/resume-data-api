@@ -88,7 +88,11 @@ GEM
     irb (1.4.1)
       reline (>= 0.3.0)
     jb (0.8.0)
+<<<<<<< HEAD
     jwt (2.3.0)
+=======
+    jwt (2.4.1)
+>>>>>>> 812b4689ba89bac147ce99522408fb5101094d6d
     loofah (2.18.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -191,7 +195,10 @@ DEPENDENCIES
   bcrypt (~> 3.1.7)
   bootsnap
   debug
+<<<<<<< HEAD
   faker
+=======
+>>>>>>> 812b4689ba89bac147ce99522408fb5101094d6d
   jb
   jwt
   pg (~> 1.1)
