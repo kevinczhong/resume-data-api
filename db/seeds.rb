@@ -14,6 +14,8 @@ require "faker"
   email = first_name + last_name + "@test.com"
   linkedin = "linkedin.com/" + first_name + last_name
   github = "github.com/" + first_name + last_name
+  personal_website = first_name.downcase + last_name.downcase + "/github.io"
+  online_resume = 
 
-  student = Student.create(first_name: first_name, last_name: last_name, email: email, phone_number: "#{Faker::PhoneNumber.phone_number}", short_bio: "#{Faker::Quote.famous_last_words}", linkedin_url: linkedin, twitter_handle: "#{Faker::Twitter.user.name}", personal_website: )
+  student = Student.create(first_name: first_name, last_name: last_name, email: email, phone_number: "#{Faker::PhoneNumber.phone_number}", short_bio: "#{Faker::Quote.famous_last_words}", linkedin_url: linkedin, twitter_handle: "#{Faker::Twitter.user.name}", personal_website: personal_website, online_resume: )
 end
