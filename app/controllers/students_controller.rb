@@ -1,4 +1,6 @@
 class StudentsController < ApplicationController
+  before_action :authenticate_admin, except: [:index, :show]
+
   def index
     students = Student.all
     render json: students.as_json
