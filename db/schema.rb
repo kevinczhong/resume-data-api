@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_06_28_175424) do
+ActiveRecord::Schema[7.0].define(version: 2022_06_28_184911) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -22,6 +22,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_28_175424) do
     t.text "details"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "student_id"
   end
 
   create_table "experiences", force: :cascade do |t|
@@ -32,12 +33,14 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_28_175424) do
     t.text "details"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "student_id"
   end
 
   create_table "skills", force: :cascade do |t|
     t.string "skill_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "student_id"
   end
 
   create_table "students", force: :cascade do |t|
@@ -45,7 +48,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_28_175424) do
     t.string "last_name"
     t.string "email"
     t.string "phone_number"
-    t.string "short_bio"
+    t.text "short_bio"
     t.string "linkedin"
     t.string "twitter_handle"
     t.string "personal_website"
@@ -54,6 +57,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_28_175424) do
     t.string "photo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
   end
 
   create_table "users", force: :cascade do |t|
