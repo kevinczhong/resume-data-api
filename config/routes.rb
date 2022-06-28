@@ -36,4 +36,8 @@ Rails.application.routes.draw do
   post "/skills" => "skills#create"
   patch "/skills/:id" => "skills#update"
   delete "/skill/:id" => "skills#destroy"
+
+  get "/student_skills" => "student_skills#index"
+  post "/student_skills" => "student_skills#create"
+  delete "/student_skills/:id" => "student_skills#destroy"
 end
