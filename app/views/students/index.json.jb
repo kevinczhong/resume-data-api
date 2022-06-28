@@ -1,0 +1,6 @@
+@students.map do |student|
+  {
+    id: student.id,
+    url: student_url(student, format: :json)
+  }
+end

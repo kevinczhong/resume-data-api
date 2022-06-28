@@ -1,0 +1,5 @@
+{
+  id: @student.id,
+  created_at: @student.created_at,
+  updated_at: @student.updated_at
+}
