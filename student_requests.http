@@ -1,3 +1,5 @@
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NTY1MjI2Nzd9.CZuItkKq8_K6K38g5yaMeBucYCgWpq1CARGX4_AqIms
+
 ### INDEX action
 
 GET http://localhost:3000/students.json
@@ -11,10 +13,14 @@ GET http://localhost:3000/students/1.json
 ### CREATE action
 
 POST http://localhost:3000/students.json
-Content-Type: application/json
+Authorization: Bearer {{jwt}}
+# Content-Type: application/json
 
 {
-
+  "first_name": "This",
+  "last_name": "Is",
+  "email": "A",
+  "phone_number": "Test"
 }
 
 ### UPDATE action

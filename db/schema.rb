@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema[7.0].define(version: 2022_06_27_204831) do
+ActiveRecord::Schema[7.0].define(version: 2022_06_28_162312) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -21,10 +20,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_27_204831) do
     t.string "job_title"
     t.string "company_name"
     t.text "details"
-=======
-ActiveRecord::Schema[7.0].define(version: 2022_06_27_204915) do
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "students", force: :cascade do |t|
     t.string "first_name"
@@ -38,7 +36,14 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_27_204915) do
     t.string "online_resume"
     t.string "github"
     t.string "photo"
->>>>>>> 812b4689ba89bac147ce99522408fb5101094d6d
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
