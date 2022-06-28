@@ -24,6 +24,7 @@ class StudentsController < ApplicationController
       online_resume: params["online_resume"],
       github: params["github"],
       photo: params["photo"],
+      user_id: params["user_id"],
     )
     if student.save
       @student = student
