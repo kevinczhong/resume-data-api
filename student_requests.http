@@ -11,12 +11,20 @@ GET http://localhost:3000/students/1.json
 ### CREATE action
 
 POST http://localhost:3000/students.json
+Content-Type: application/json
 
+{
+
+}
 
 ### UPDATE action
 
 PATCH http://localhost:3000/students/1.json
+Content-Type: application/json
 
+{
+  
+}
 
 ### DESTROY action
 

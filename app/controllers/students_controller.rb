@@ -1,12 +1,12 @@
 class StudentsController < ApplicationController
   def index
     students = Student.all
-    render json: { message: "worling?" }
+    render json: students.as_json
   end
 
   def show
     student = Student.find_by(id: params[:id])
-    render json: { message: "working?" }
+    render json: student.as_json
   end
 
   def create
@@ -24,7 +24,7 @@ class StudentsController < ApplicationController
       photo: params["photo"],
     )
     student.save
-    render json: { message: "working?" }
+    render json: student.as_json
   end
 
   def update
@@ -41,7 +41,7 @@ class StudentsController < ApplicationController
     student.github = params["github"] || student.github
     student.photo = params["photo"] || student.photo
     student.save
-    render json: { message: "working?" }
+    render json: student.as_json
   end
 
   def destroy
