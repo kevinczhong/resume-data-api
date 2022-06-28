@@ -1,0 +1,23 @@
+### INDEX action
+
+GET http://localhost:3000/students.json
+
+
+### SHOW action
+
+GET http://localhost:3000/students/1.json
+
+
+### CREATE action
+
+POST http://localhost:3000/students.json
+
+
+### UPDATE action
+
+PATCH http://localhost:3000/students/1.json
+
+
+### DESTROY action
+
+DELETE http://localhost:3000/students/1.json
