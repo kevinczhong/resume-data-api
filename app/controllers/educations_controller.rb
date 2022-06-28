@@ -1,6 +1,6 @@
 class EducationsController < ApplicationController
   def index
-    educations = Educations.all
+    educations = Education.all
     render json: educations.as_json
   end
 
@@ -10,7 +10,7 @@ class EducationsController < ApplicationController
   end
 
   def create
-    education = Educations.new(
+    education = Education.new(
       start_date: params[:start_date],
       start_date: params[:end_date],
       degree: params[:degree],
