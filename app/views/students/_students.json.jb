@@ -15,5 +15,10 @@
   capstones: student.capstones,
   educations: student.educations,
   experiences: student.experiences,
-  student_skills: student.student_skills,
+  skills: student.skills.map do |skill|
+    {
+      id: skill.id,
+      skill_name: skill.skill_name,
+    }
+  end,
 }
