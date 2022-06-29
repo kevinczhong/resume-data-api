@@ -13,6 +13,7 @@ require "faker"
 
 n = 5
 skills = ["Ruby", "Rails", "HTML", "CSS", "Javascript"]
+degrees = ["BSc in Theoretical Physics", "BA in English Literature", "BComm in Financial Economics", "BEng in Civil Engineering"]
 
 for skill in skills
   skill_name = skill
@@ -55,5 +56,20 @@ n.times do
       skill_id: index,
     )
     index += 1
+  end
+
+  no_educations = rand(1..5)
+  index = 1
+  no_educations.times do
+    start_date = Faker::Date.between(from: 10.years.ago, to: Date.today)
+    end_date = Faker::Date.between(from: start_date, to: Date.today)
+    Education.create(
+      student_id: student.id,
+      end_date: end_date,
+      start_date: start_date,
+      university_name: Faker::University.name,
+      degree: degrees.sample,
+      details: "#{Faker::Quotes::Shakespeare.hamlet_quote}",
+    )
   end
 end
