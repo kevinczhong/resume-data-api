@@ -12,4 +12,8 @@
   github: student.github,
   photo: student.photo,
   user_id: student.user_id,
+  capstones: student.capstones,
+  educations: student.educations,
+  experiences: student.experiences,
+  student_skills: student.student_skills,
 }
