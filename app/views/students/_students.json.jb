@@ -12,4 +12,13 @@
   github: student.github,
   photo: student.photo,
   user_id: student.user_id,
+  capstones: student.capstones,
+  educations: student.educations,
+  experiences: student.experiences,
+  skills: student.skills.map do |skill|
+    {
+      id: skill.id,
+      skill_name: skill.skill_name,
+    }
+  end,
 }
