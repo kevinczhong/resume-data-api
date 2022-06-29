@@ -31,7 +31,7 @@ n.times do
   personal_website = first_name.downcase + last_name.downcase + "/github.io"
   online_resume = first_name.downcase + last_name.downcase + "/resumes.com"
 
-  user = User.create(name: first_name, email: email, password_digest: "password")
+  user = User.create!(name: first_name, email: email, password: "password", password_confirmation: "password")
 
   student = Student.create(
     first_name: first_name,
