@@ -44,7 +44,7 @@ n.times do
     personal_website: personal_website,
     online_resume: online_resume,
     github: github,
-    photo: "placeholder.jpg",
+    photo: "#{Faker::LoremPixel.image}",
     user_id: user.id,
   )
 
@@ -59,7 +59,6 @@ n.times do
   end
 
   no_educations = rand(1..5)
-  index = 1
   no_educations.times do
     start_date = Faker::Date.between(from: 10.years.ago, to: Date.today)
     end_date = Faker::Date.between(from: start_date, to: Date.today)
@@ -72,4 +71,26 @@ n.times do
       details: "#{Faker::Quotes::Shakespeare.hamlet_quote}",
     )
   end
+
+  no_experiences = rand(1..5)
+  no_experiences.times do
+    start_date = Faker::Date.between(from: 10.years.ago, to: Date.today)
+    end_date = Faker::Date.between(from: start_date, to: Date.today)
+    Experience.create(
+      student_id: student.id,
+      end_date: end_date,
+      start_date: start_date,
+      job_title: "#{Faker::Company.profession}",
+      company_name: "#{Faker::Company.name}",
+      details: "#{Faker::Company.bs}",
+    )
+  end
+
+  Capstone.create(
+    student_id: student.id,
+    name: "#{Faker::Science.tool}",
+    description: "#{Faker::Hacker.say_something_smart}",
+    url: "#{Faker::Internet.domain_name}",
+    screenshot: "#{Faker::LoremPixel.image}",
+  )
 end
