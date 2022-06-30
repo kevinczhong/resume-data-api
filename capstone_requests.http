@@ -1,0 +1,28 @@
+### INDEX action
+
+GET http://localhost:3000/capstones.json
+
+### SHOW action
+GET http://localhost:3000/capstones/1.json
+
+### CREATE action
+
+POST http://localhost:3000/capstones.json
+Content-Type: application/json
+
+{
+
+}
+
+### UPDATE action
+
+PATCH http://localhost:3000/capstones/1.json
+Content-Type: application/json
+
+{
+
+}
+
+### DESTROY action
+
+DELETE http://localhost:3000/capstones/1.json
