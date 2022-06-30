@@ -1,0 +1,30 @@
+
+### index
+GET http://localhost:3000/educations.json
+
+
+### show
+GET http://localhost:3000/educations/1.json
+
+### create 
+POST http://localhost:3000/educations.json
+Content-Type: application/json
+
+{
+"degree": "BA in Science",
+"university_name": "UCLA",
+"details": "test",
+"student_id": 1
+}
+
+### update
+PATCH http://localhost:3000/educations/1.json
+Content-Type:  application/json
+
+{
+
+}
+
+### destroy
+
+DELETE http://localhost:3000/educations/20.json
